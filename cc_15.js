@@ -24,6 +24,17 @@ function addRiskItem(riskName, riskLevel, department){
         riskDash.removeChild(riskCard)
     })
     riskCard.appendChild(resolveButton) // appends resolve button to card
+
+    if (riskLevel === "High"){
+        riskCard.style.backgroundColor ="rgb(247, 16, 16)"
+        riskCard.style.color = "white"
+    }
+    else if (riskLevel === "Medium"){
+         riskCard.style.backgroundColor ="rgb(255, 251, 17)"
+    }
+    else {
+         riskCard.style.backgroundColor = "rgb(83, 252, 32)"
+    }
 }
 
 const riskForm = document.getElementById("riskForm") // assigns value to a constant
@@ -42,3 +53,5 @@ riskForm.addEventListener('submit', () =>{ // creates an event listener that lis
 addRiskItem("Market Fluctuations", "High", "Finance");
 addRiskItem("Data Breach", "High", "IT");
 addRiskItem("Supply Chain Disruption", "Medium", "Operations");
+addRiskItem("Cybersecurity Threat", "High", "IT");
+addRiskItem("HR Compliance Issue", "Low", "Human Resources");
